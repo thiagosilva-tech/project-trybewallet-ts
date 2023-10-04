@@ -1,0 +1,9 @@
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.h1-header {
+  color: darkolivegreen;
+}
