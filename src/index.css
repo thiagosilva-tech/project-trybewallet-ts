@@ -43,6 +43,7 @@ code {
 
 .btn{
   background-color: green;
+  border: none;
   height: 30px;
   width: 200px;
   color: white;

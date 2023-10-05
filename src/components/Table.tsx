@@ -1,5 +1,10 @@
 function Table() {
-  return <div>Table</div>;
+  
+  return (
+  <div>
+
+  </div>
+  );
 }
 
 export default Table;

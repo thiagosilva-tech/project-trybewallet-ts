@@ -1,0 +1,16 @@
+.form-wallet {
+  align-items: center;
+  background-color: slategrey;
+  color: white;
+  display: flex;
+  height: 90px;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.input-form {
+  border: none;
+  border-radius: 2px;
+  margin-left: 10px;
+  padding: 6px;
+}

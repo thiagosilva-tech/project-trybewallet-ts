@@ -1,4 +1,5 @@
-import { WalletData } from '../../types';
+import fetchCurrencies from '../../helpers/fetchCurrencies';
+import { Dispatch, Expenses } from '../../types';
 
 // Coloque aqui suas actions
 export const SUBMIT_LOGIN_DATA = 'SUBMIT_LOGIN_DATA';
@@ -12,9 +13,17 @@ export function submitLogin(emailData: string) {
 
 export const SUBMIT_WALLET_DATA = 'SUBMIT_WALLET_DATA';
 
-export function submitWallet(walletData: WalletData) {
+export function submitWallet(expeses: Expenses) {
   return {
-    type: SUBMIT_LOGIN_DATA,
-    payload: walletData,
+    type: SUBMIT_WALLET_DATA,
+    payload: expeses,
+  };
+}
+
+export function fetchCurrenciesThunk(walletForm: Expenses) {
+  return async (dispatch: Dispatch) => {
+    const currencies = await fetchCurrencies();
+    const newWalletForm = { ...walletForm, exchangeRates: currencies };
+    dispatch(submitWallet(newWalletForm));
   };
 }
