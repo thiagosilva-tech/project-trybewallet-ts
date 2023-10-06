@@ -13,6 +13,6 @@ function calculateTotalExpenses(expenses: Expenses[]) {
 
     total += numValueWithCurrencie;
   }
-  return total;
+  return total.toFixed(2);
 }
 export default calculateTotalExpenses;

@@ -26,11 +26,11 @@ export type Expenses = {
   currency: string,
   method: string,
   tag: string,
-  exchangeRates: Currencies[]
+  exchangeRates: { [chave: string]: Currencies }
 };
 
 export type WalletData = {
-  currencies: Currencies[], // array de string
+  currencies: string[], // array de string
   expenses: Expenses[], // array de objetos, com cada objeto tendo as chaves id, value, currency, method, tag, description e exchangeRates
   editor: boolean, // valor booleano que indica se uma despesa está sendo editada
   idToEdit: number,

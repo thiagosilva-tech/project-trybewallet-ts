@@ -36,7 +36,8 @@ function Table() {
               <td>{expense.tag}</td>
               <td>{expense.method}</td>
               <td>{Number(expense.value).toFixed(2)}</td>
-              <td>{findCurrencie(expense)?.name}</td>
+              <td>{findCurrencie(expense).name}</td>
+              <td>{Number(findCurrencie(expense).ask).toFixed(2)}</td>
               <td>{calculateExpense(expense)}</td>
               <td>Real</td>
               <td>

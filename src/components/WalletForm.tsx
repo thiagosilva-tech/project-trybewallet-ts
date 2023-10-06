@@ -24,21 +24,21 @@ function WalletForm() {
     { target }: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
   ) => {
     const { name: targetName, value } = target;
-    setWalletForm({ ...walletForm,
+    setWalletForm({
+      ...walletForm,
       [targetName]: value,
-      id: walletData.expenses.length === 0 ? 0 : walletData.expenses.length });
+      id: walletData.expenses.length === 0 ? 0 : walletData.expenses.length,
+    });
   };
 
   return (
     <form
       className="form-wallet"
-      onSubmit={
-      async (e) => {
+      onSubmit={ (e) => {
         e.preventDefault();
         dispatch(fetchCurrenciesThunk(walletForm));
         setWalletForm(INITIAL_STATE);
-      }
-}
+      } }
     >
       <label htmlFor="value">
         Valor:
@@ -75,7 +75,7 @@ function WalletForm() {
           data-testid="currency-input"
         >
           {walletData.currencies
-            .map(({ code }) => (<option key={ code } value={ code }>{code}</option>))}
+            .map((code) => (<option key={ code } value={ code }>{code}</option>))}
         </select>
       </label>
       <label htmlFor="method">
@@ -88,9 +88,9 @@ function WalletForm() {
           onChange={ handleChange }
           data-testid="method-input"
         >
-          <option value="dinheiro">Dinheiro</option>
-          <option value="cartao-de-credito">Cartão de crédito</option>
-          <option value="cartao-de-debito">Cartão de débito</option>
+          <option value="Dinheiro">Dinheiro</option>
+          <option value="Cartão de crédito">Cartão de crédito</option>
+          <option value="Cartão de débito">Cartão de débito</option>
         </select>
       </label>
       <label htmlFor="tag">
@@ -103,11 +103,11 @@ function WalletForm() {
           onChange={ handleChange }
           data-testid="tag-input"
         >
-          <option value="alimentacao">Alimentação</option>
-          <option value="lazer">Lazer</option>
-          <option value="tabalho">Trabalho</option>
-          <option value="transporte">Transporte</option>
-          <option value="saude">Saúde</option>
+          <option value="Alimentação">Alimentação</option>
+          <option value="Lazer">Lazer</option>
+          <option value="Trabalho">Trabalho</option>
+          <option value="Transporte">Transporte</option>
+          <option value="Saúde">Saúde</option>
         </select>
       </label>
       <button

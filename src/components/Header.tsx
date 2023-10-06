@@ -8,7 +8,7 @@ import calculateTotalExpenses from '../helpers/calculateTotalExpenses';
 function Header() {
   const loginData = useSelector((state: State) => state.user);
   const { expenses } = useSelector((state: State) => state.wallet);
-  const [total, setTotal] = useState(0);
+  const [total, setTotal] = useState('');
 
   useEffect(() => {
     const newTotalExpenses = calculateTotalExpenses(expenses);
@@ -24,7 +24,7 @@ function Header() {
           <p data-testid="email-field">{`Email: ${loginData.email}`}</p>
           <p>
             Despesa Total: R$
-            <span data-testid="total-field">{total.toFixed(2)}</span>
+            <span data-testid="total-field">{total}</span>
             <span data-testid="header-currency-field">BRL</span>
           </p>
         </div>

@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { submitLogin } from '../redux/actions';
+import { fetchCurrenciesInitial, submitLogin } from '../redux/actions';
+import { Dispatch } from '../types';
 
 function Login() {
   const [login, setLogin] = useState({ email: '', password: '' });
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const dispatch: Dispatch = useDispatch();
 
   const handleChange = (
     { target }: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
@@ -22,6 +23,7 @@ function Login() {
         onSubmit={ (e) => {
           e.preventDefault();
           dispatch(submitLogin(login.email));
+          dispatch(fetchCurrenciesInitial());
           navigate('/carteira');
         } }
       >

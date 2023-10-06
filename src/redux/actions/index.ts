@@ -1,5 +1,6 @@
 import fetchCurrencies from '../../helpers/fetchCurrencies';
-import { Dispatch, Expenses } from '../../types';
+import fetchCurrenciesObj from '../../helpers/fetchCurrenciesObj';
+import { Currencies, Dispatch, Expenses } from '../../types';
 
 // Coloque aqui suas actions
 export const SUBMIT_LOGIN_DATA = 'SUBMIT_LOGIN_DATA';
@@ -22,7 +23,7 @@ export function submitWallet(expese: Expenses) {
 
 export function fetchCurrenciesThunk(walletForm: Expenses) {
   return async (dispatch: Dispatch) => {
-    const currencies = await fetchCurrencies();
+    const currencies = await fetchCurrenciesObj();
     const newWalletForm = { ...walletForm, exchangeRates: currencies };
     dispatch(submitWallet(newWalletForm));
   };
@@ -34,5 +35,21 @@ export function updateWallet(expeses: Expenses[]) {
   return {
     type: UPDATE_WALLET_DATA,
     payload: expeses,
+  };
+}
+
+export const FETCH_CURRENCIES = 'FETCH_CURRENCIES';
+
+export function updateCurrencies(currencies: Currencies[]) {
+  return {
+    type: FETCH_CURRENCIES,
+    payload: currencies,
+  };
+}
+
+export function fetchCurrenciesInitial() {
+  return async (dispatch: Dispatch) => {
+    const result = await fetchCurrencies();
+    dispatch(updateCurrencies(result));
   };
 }
