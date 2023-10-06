@@ -1,3 +1,8 @@
+.container-table {
+  margin: 0 20px;
+
+}
+
 table {
   border-collapse: collapse;
   font-family: Arial, sans-serif;

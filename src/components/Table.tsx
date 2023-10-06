@@ -15,46 +15,48 @@ function Table() {
   };
 
   return (
-    <table>
-      <thead className="thead">
-        <tr>
-          <th>Descrição</th>
-          <th>Tag</th>
-          <th>Método de pagamento</th>
-          <th>Valor</th>
-          <th>Moeda</th>
-          <th>Câmbio utilizado</th>
-          <th>Valor convertido</th>
-          <th>Moeda de conversão</th>
-          <th>Editar/Excluir</th>
-        </tr>
-      </thead>
-      <tbody>
-        {expenses.map((expense) => {
-          return (
-            <tr key={ expense.id }>
-              <td>{expense.description}</td>
-              <td>{expense.tag}</td>
-              <td>{expense.method}</td>
-              <td>{Number(expense.value).toFixed(2)}</td>
-              <td>{findCurrencie(expense).name}</td>
-              <td>{Number(findCurrencie(expense).ask).toFixed(2)}</td>
-              <td>{calculateExpense(expense)}</td>
-              <td>Real</td>
-              <td>
-                <button
-                  data-testid="delete-btn"
-                  onClick={ () => handleDelete(expense.id) }
-                  className="btn-delet"
-                >
-                  Excluir
-                </button>
-              </td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+    <div className="container-table">
+      <table>
+        <thead className="thead">
+          <tr>
+            <th>Descrição</th>
+            <th>Tag</th>
+            <th>Método de pagamento</th>
+            <th>Valor</th>
+            <th>Moeda</th>
+            <th>Câmbio utilizado</th>
+            <th>Valor convertido</th>
+            <th>Moeda de conversão</th>
+            <th>Editar/Excluir</th>
+          </tr>
+        </thead>
+        <tbody>
+          {expenses.map((expense) => {
+            return (
+              <tr key={ expense.id }>
+                <td>{expense.description}</td>
+                <td>{expense.tag}</td>
+                <td>{expense.method}</td>
+                <td>{Number(expense.value).toFixed(2)}</td>
+                <td>{findCurrencie(expense).name}</td>
+                <td>{Number(findCurrencie(expense).ask).toFixed(2)}</td>
+                <td>{calculateExpense(expense)}</td>
+                <td>Real</td>
+                <td>
+                  <button
+                    data-testid="delete-btn"
+                    onClick={ () => handleDelete(expense.id) }
+                    className="btn-delet"
+                  >
+                    Excluir
+                  </button>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
