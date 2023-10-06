@@ -41,9 +41,6 @@ function Table() {
               <td>{calculateExpense(expense)}</td>
               <td>Real</td>
               <td>
-                <button>Editar</button>
-              </td>
-              <td>
                 <button
                   data-testid="delete-btn"
                   onClick={ () => handleDelete(expense.id) }
