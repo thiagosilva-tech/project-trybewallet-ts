@@ -1,0 +1,36 @@
+table {
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  margin: 20px 0;
+  width: 100%;
+}
+
+thead th {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+tbody td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+tbody tr:nth-child( even ) {
+  background-color: #f2f2f2;
+}
+
+.btn-delet {
+  background-color: tomato;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.btn-delet:hover {
+  background-color: orangered;
+}

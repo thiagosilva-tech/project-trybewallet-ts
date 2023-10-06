@@ -6,14 +6,12 @@ import Header from './components/Header';
 
 function App() {
   return (
-    <main>
-      <Routes>
-        <Route path="/" element={ <Login /> } />
-        <Route path="/carteira" element={ <Header /> }>
-          <Route path="/carteira" element={ <Wallet /> } />
-        </Route>
-      </Routes>
-    </main>
+    <Routes>
+      <Route path="/" element={ <Login /> } />
+      <Route path="/carteira" element={ <Header /> }>
+        <Route path="/carteira" element={ <Wallet /> } />
+      </Route>
+    </Routes>
   );
 }
 

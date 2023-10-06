@@ -3,6 +3,7 @@ import { State } from '../types';
 import findCurrencie from '../helpers/findCurrencie';
 import calculateExpense from '../helpers/calculateExpense';
 import { updateWallet } from '../redux/actions';
+import './Table.css';
 
 function Table() {
   const { expenses } = useSelector((state: State) => state.wallet);
@@ -15,7 +16,7 @@ function Table() {
 
   return (
     <table>
-      <thead>
+      <thead className="thead">
         <tr>
           <th>Descrição</th>
           <th>Tag</th>
@@ -44,6 +45,7 @@ function Table() {
                 <button
                   data-testid="delete-btn"
                   onClick={ () => handleDelete(expense.id) }
+                  className="btn-delet"
                 >
                   Excluir
                 </button>

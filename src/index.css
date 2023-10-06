@@ -60,6 +60,7 @@ code {
 
 .btn:hover{
   cursor: pointer;
+  background-color: darkgreen;
 }
 
 .btn:disabled{
