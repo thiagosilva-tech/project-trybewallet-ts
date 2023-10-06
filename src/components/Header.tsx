@@ -1,30 +1,18 @@
 import { useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { Expenses, State } from '../types';
+import { State } from '../types';
 import './Header.css';
-
-function calculateTotalExpenses(expenses: Expenses[]) {
-  let total = 0;
-  for (let index = 0; index < expenses.length; index += 1) {
-    const currencie = expenses[index].exchangeRates
-      .find((rate) => rate.code === expenses[index].currency)?.ask;
-    const { value } = expenses[index];
-    const numValue = Number(value);
-    const numCurrencie = Number(currencie);
-    const numValueWithCurrencie = numValue * numCurrencie;
-    total += numValueWithCurrencie;
-  }
-  return total;
-}
+import calculateTotalExpenses from '../helpers/calculateTotalExpenses';
 
 function Header() {
   const loginData = useSelector((state: State) => state.user);
-  const expenses = useSelector((state: State) => state.wallet.expenses);
+  const { expenses } = useSelector((state: State) => state.wallet);
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
     const newTotalExpenses = calculateTotalExpenses(expenses);
+
     setTotal(newTotalExpenses);
   }, [expenses]);
 

@@ -13,10 +13,10 @@ export function submitLogin(emailData: string) {
 
 export const SUBMIT_WALLET_DATA = 'SUBMIT_WALLET_DATA';
 
-export function submitWallet(expeses: Expenses) {
+export function submitWallet(expese: Expenses) {
   return {
     type: SUBMIT_WALLET_DATA,
-    payload: expeses,
+    payload: expese,
   };
 }
 
@@ -25,5 +25,14 @@ export function fetchCurrenciesThunk(walletForm: Expenses) {
     const currencies = await fetchCurrencies();
     const newWalletForm = { ...walletForm, exchangeRates: currencies };
     dispatch(submitWallet(newWalletForm));
+  };
+}
+
+export const UPDATE_WALLET_DATA = 'UPDATE_WALLET_DATA';
+
+export function updateWallet(expeses: Expenses[]) {
+  return {
+    type: UPDATE_WALLET_DATA,
+    payload: expeses,
   };
 }
