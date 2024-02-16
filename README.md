@@ -2,34 +2,42 @@
 
 O Trybewallet é uma aplicação web destinada a ajudar o usuário a gerenciar sua carteira de gastos em diversas moedas. Esta aplicação inclui funcionalidades como login, adição e remoção de despesas, exibição de despesas em uma tabela e edição de despesas.
 
-## Tecnologias Utilizadas
-
-- **React:** Utilizado para criar os componentes da interface de usuário.
-- **Redux:** Utilizado para gerenciar o estado da aplicação.
-- **React Router:** Utilizado para lidar com a navegação entre diferentes páginas.
-- **Jest e React Testing Library:** Utilizados para escrever e executar testes unitários.
-
 ## Requisitos do Projeto
 
-### 1. Página de Login
-Crie uma página inicial de login onde o usuário pode se identificar com e-mail e senha.
+### 1. Página Inicial de Login
+Crie uma página inicial de login onde os usuários possam inserir seus dados de login.
 
-#### 1.1. Campos de Entrada
+- A rota para esta página deve ser `/`.
 - A página deve conter campos para inserção de e-mail e senha.
-- Deve haver um botão "Entrar" para submeter o formulário.
+- Deve haver um botão com o texto "Entrar".
 
-### 2. Página da Carteira
-Crie uma página onde o usuário possa gerenciar sua carteira de gastos em diversas moedas.
+### 2. Header da Página de Carteira
+Desenvolva um cabeçalho para a página de carteira com as seguintes características:
 
-#### 2.1. Header
-- Desenvolva um cabeçalho para a página de carteira.
+- O componente `Header` deve ser renderizado dentro do componente `Wallet`.
 
-#### 2.2. Formulário de Adição de Despesa
-- Desenvolva um formulário para adicionar uma despesa à carteira.
+### 3. Formulário de Adição de Despesa
+Desenvolva um formulário para adicionar uma despesa à carteira, contendo as seguintes características:
 
-#### 2.3. Tabela de Gastos
-- Desenvolva uma tabela de gastos que exibe as despesas do usuário.
-- Crie um botão para deletar uma despesa da tabela.
+- O componente `WalletForm` deve ser renderizado dentro do componente `Wallet`.
+- Desenvolva a funcionalidade do botão "Adicionar despesa" de modo que, ao clicar no botão, as ações descritas sejam executadas.
+
+### 4. Testes Unitários
+Desenvolva testes para atingir uma cobertura total de 60% da aplicação.
+
+### 5. Tabela de Gastos
+Desenvolva uma tabela de gastos com as seguintes características:
+
+- A tabela deve ter um cabeçalho com os seguintes valores: (Valores a serem preenchidos)
+- A tabela deve ser alimentada pelo estado da aplicação, disponível na chave `expenses` do reducer `wallet`.
+
+### 6. Botão para Deletar Despesa
+Crie um botão para deletar uma despesa da tabela, com as seguintes características:
+
+- O botão deve ser o último item da linha da tabela e deve ter o atributo `data-testid="delete-btn"`.
+- Após o botão ser clicado, a despesa deve ser deletada do estado global, deixando de ser exibida na tabela. Além disso, o valor total exibido no header deve ser alterado.
+
+Estes são os requisitos necessários para o desenvolvimento do projeto Trybewallets. Certifique-se de implementá-los adequadamente para obter o resultado desejado.
 
 ## Conclusão
 
