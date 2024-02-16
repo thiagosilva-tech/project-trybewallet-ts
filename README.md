@@ -31,11 +31,6 @@ Crie uma página onde o usuário possa gerenciar sua carteira de gastos em diver
 - Desenvolva uma tabela de gastos que exibe as despesas do usuário.
 - Crie um botão para deletar uma despesa da tabela.
 
-### Requisitos Bônus
-
-#### 1. Botão de Edição de Despesa
-- Implemente um botão para editar uma despesa na tabela.
-
 ## Conclusão
 
 O Trybewallet foi uma aplicação web poderosa para ajudar os usuários a gerenciar suas finanças de forma eficaz. Com uma interface amigável e funcionalidades úteis, esta aplicação é uma ferramenta valiosa para quem busca controlar seus gastos de forma organizada e eficiente.
